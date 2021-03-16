@@ -9,7 +9,7 @@ import { clearTimeout } from "timers";
 
 export class Deferred<T> {
 
-    resolve: (value?: T) => void;
+    resolve: (value?: T | PromiseLike<T>) => void;
     reject: (err?: unknown) => void;
 
     promise = new Promise<T>((resolve, reject) => {
